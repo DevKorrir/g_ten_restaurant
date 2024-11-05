@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Restaurant - Order Form</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/food-collage-layout-variety-dishes-260nw-2369572025.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 2.0)), url('img/food-collage-layout-variety-dishes-260nw-2369572025.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        ul ,li {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            position: relative;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #030e07a6;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #ff7200;
+            color: #fff;
+        }
+        ul li.active a,
+        ul li a:hover {
+            background-color: #ff7200;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Title */
+        .title h1 {
+            font-size: 2.5rem;
+            color: #ff7200;
+            margin: 20px 0;
+        }
+
+        /* Order Form Container */
+        .order-form {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: #030e07a6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Grid Layout for Products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Individual Product Styling */
+        .product-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-item h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .product-item .price {
+            font-weight: bold;
+            color: #ff7200;
+            margin: 10px 0;
+        }
+
+        /* Stock Indicator */
+        .product-item .stock {
+            font-size: 0.9rem;
+            color: #007f00; /* Green for available stock */
+            margin: 5px 0;
+        }
+
+        /* Quantity Input */
+        .product-item input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff7200;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .submit-btn:hover {
+            background-color: #e65c00;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 20px 0;
+            color: #fff;
+            background-color: #ff7200;
+        }
+
+        footer p {
+            margin: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #ff7200;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title h1 {
+                font-size: 2rem;
+            }
+
+            .submit-btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Restaurant Logo">
+        </div>
+        <h1>Luxurious Restaurant</h1>
+        <div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="Our menu.html">Our Menu</a></li>
+            <li class="active"><a href="Order now.html">Order Now</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <section class="order-form">
+        <div class="title">
+            <h1>Order Form</h1>
+        </div>
+        <form action="/submit-order" method="post">
+            <div class="product-grid">
+                <!-- Sample Items with Stock Levels -->
+                <div class="product-item">
+                    <img src="img/Nyama choma.jpeg" alt="Nyama Choma">
+                    <h3>Nyama Choma</h3>
+                    <p>Grilled meat, typically goat or beef, served with kachumbari.</p>
+                    <p class="price">KES 1000</p>
+                    <p class="stock">In Stock: 15</p>
+                    <input type="number" name="nyama_choma" min="1" max="15" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/coconut.jpeg" alt="Coconut Water">
+                    <h3>Coconut Water</h3>
+                    <p>Refreshing drink from young coconuts.</p>
+                    <p class="price">KES 100</p>
+                    <p class="stock">In Stock: 25</p>
+                    <input type="number" name="coconut" min="1" max="25" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/chevda.jpeg" alt="Chevda">
+                    <h3>Chevda</h3>
+                    <p>Spicy, crunchy mix of fried lentils and peanuts.</p>
+                    <p class="price">KES 70</p>
+                    <p class="stock">In Stock: 30</p>
+                    <input type="number" name="chevda" min="1" max="30" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/Soda.jpeg" alt="Soda">
+                    <h3>Soda</h3>
+                    <p>Various flavors available.</p>
+                    <p class="price">KES 70-100</p>
+                    <p class="stock">In Stock: 50</p>
+                    <input type="number" name="soda" min="1" max="50" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/alcohol.jpg" alt="Alcoholic Beverages">
+                    <h3>Alcoholic Beverages</h3>
+                    <p>A range of alcoholic drinks available.</p>
+                    <p class="price">KES 70-700</p>
+                    <p class="stock">In Stock: 20</p>
+                    <input type="number" name="alcoholic" min="1" max="20" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/Chipsi.jpeg" alt="Chipsi">
+                    <h3>Chipsi</h3>
+                    <p>A French fry omelette.</p>
+                    <p class="price">KES 70</p>
+                    <p class="stock">In Stock: 35</p>
+                    <input type="number" name="chipsi" min="1" max="35" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/Chapati.jpeg" alt="Chapati">
+                    <h3>Chapati</h3>
+                    <p>A soft, layered flatbread.</p>
+                    <p class="price">KES 20-50</p>
+                    <p class="stock">In Stock: 40</p>
+                    <input type="number" name="chapati" min="1" max="40" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/makai.jpeg" alt="Roasted Maize">
+                    <h3>Roasted Maize</h3>
+                    <p>Classic street food with a smoky flavor.</p>
+                    <p class="price">KES 50</p>
+                    <p class="stock">In Stock: 45</p>
+                    <input type="number" name="makai" min="1" max="45" placeholder="Qty">
+                </div>
+                <div class="product-item">
+                    <img src="img/Bhanjia.jpeg" alt="Bhanjia">
+                    <h3>Bhanjia</h3>
+                    <p>Sliced potatoes coated in spiced batter and deep-fried.</p>
+                    <p class="price">KES 20-50</p>
+                    <p class="stock">In Stock: 60</p>
+                    <input type="number" name="bhanjia" min="1" max="60" placeholder="Qty">
+                </div>
+                    <div class="product-item">
+                        <img src="img/Pilau.jpeg" alt="Coconut Water">
+                        <h3>Coconut Water</h3>
+                        <p>Refreshing drink from young coconuts.</p>
+                        <p class="price">KES 100</p>
+                        <p class="stock">In Stock: 25</p>
+                        <input type="number" name="coconut" min="1" max="25" placeholder="Qty">
+                    </div>
+                    <div class="product-item">
+                        <img src="img/pizza.jpeg" alt="Coconut Water">
+                        <h3>Coconut Water</h3>
+                        <p>Refreshing drink from young coconuts.</p>
+                        <p class="price">KES 100</p>
+                        <p class="stock">In Stock: 25</p>
+                        <input type="number" name="coconut" min="1" max="25" placeholder="Qty">
+                    </div>
+                <div class="product-item">
+                    <img src="img/Samaki.jpeg" alt="Coconut Water">
+                    <h3>Coconut Water</h3>
+                    <p>Refreshing drink from young coconuts.</p>
+                    <p class="price">KES 100</p>
+                    <p class="stock">In Stock: 25</p>
+                    <input type="number" name="coconut" min="1" max="25" placeholder="Qty">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Order Now</button>
+        </form>
+
+        <div class="nav-buttons">
+            <button onclick="window.location.href='Our menu.html'">Previous</button>
+            <button onclick="window.location.href='service.html'">Next</button>
+        </div>
+    </section>
+
+<footer>
+    <p>&copy; 2024 Luxurious Restaurant. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

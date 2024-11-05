@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Restaurant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/food-collage-layout-variety-dishes-260nw-2369572025.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li a:hover,
+        ul li.active a {
+            background-color: #ff7200;
+            color: #fff;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            background-color: #030e07a6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            text-align: center;
+            color: #fff;
+        }
+
+        .title h1 {
+            color: #ff7200;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-top: 40px;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            color: #ff7200;
+            margin-bottom: 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 270px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            margin-top: 10px;
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .team-info p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .team-info a {
+            color: #ff7200;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .team-info a:hover {
+            color: #e65c00;
+        }
+
+        .nav-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+        .nav-buttons button {
+            background-color: #ff7200;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 20px 0;
+            color: #fff;
+            background-color: #ff7200;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Restaurant Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="About us.html">About Us</a></li>
+            <li><a href="Our menu.html">Our Menu</a></li>
+            <li><a href="Order now.html">Order Now</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="title">
+            <h1>About Us</h1>
+            <p>Luxurious Restaurant was founded in 2022 with a vision of creating a unique dining experience that combines elegance,
+                exceptional cuisine, and impeccable service. We wanted to offer a place where guests could escape the ordinary and indulge
+                in a luxurious atmosphere, enjoying meticulously crafted dishes made from the finest ingredients. Our goal was to set a new
+                standard in the culinary world, providing a memorable experience that leaves a lasting impression on every guest.</p>
+
+            <h1>Our Mission</h1>
+            <p>Our mission is to provide an unparalleled dining experience that combines exquisite cuisine, exceptional service, and a
+                sophisticated ambiance. We are dedicated to using the finest ingredients and innovative culinary techniques to create memorable
+                moments for our guests.</p>
+
+            <h1>Our Vision</h1>
+            <p>Our vision is to be the premier destination for luxury dining, where every guest feels valued and indulged. We aspire to set the
+                standard for excellence in the culinary world, continuously evolving to exceed expectations and create lasting impressions.</p>
+        </div>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="img/martin.jpg" alt="Martin">
+                    <div class="team-info">
+                        <h3>Martin </h3>
+                        <p>Executive Chef</p>
+                        <a href="mailto:martin@luxrestaurant.com">martin@luxrestaurant.com</a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="img/brian.jpg" alt="brian">
+                    <div class="team-info">
+                        <h3>Brian</h3>
+                        <p>General Manager</p>
+                        <a href="mailto:brianrotich@luxrestaurant.com">brianrotich@luxrestaurant.com</a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="img/vebestian.jpg" alt="vebestian">
+                    <div class="team-info">
+                        <h3>Vebestian</h3>
+                        <p>Head of Marketing</p>
+                        <a href="mailto:vebestian@luxrestaurant.com">vebestian@luxrestaurant.com</a>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="img/team4.jpg" alt="rono">
+                    <div class="team-info">
+                        <h3>Rono Martin</h3>
+                        <p>Head of Operations</p>
+                        <a href="mailto:ronomartin8890@luxrestaurant.com">ronomartin8890@luxrestaurant.com</a>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <img src="img/team5.jpg" alt="victor">
+                    <div class="team-info">
+                        <h3>victor</h3>
+                        <p>Pastry Chef</p>
+                        <a href="mailto:victor@luxrestaurant.com">victor@luxrestaurant.com</a>
+                    </div>
+                </div>
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <img src="img/aldo2.jpg" alt="aldo">
+                    <div class="team-info">
+                        <h3>Aldo Korir</h3>
+                        <p>Sommelier</p>
+                        <a href="mailto:koriraldo@luxrestaurant.com">koriraldo@luxrestaurant.com</a>
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+        <div class="nav-buttons">
+            <button onclick="window.location.href='index.html'">Previous</button>
+            <button onclick="window.location.href='Our menu.html'">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024, Luxurious Restaurant. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

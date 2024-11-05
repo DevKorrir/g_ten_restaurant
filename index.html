@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .video-banner {
+            align-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-banner video {
+            width: 100%;
+            height: 600px;
+            max-width: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-banner:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .play-button:hover {
+            background: rgba(255, 114, 0, 0.8);
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #ddd;
+            height: 8px;
+            cursor: pointer;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: -4px;
+        }
+
+        .progress {
+            background: #ff7200;
+            height: 100%;
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Restaurant Logo">
+        </div>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="Our menu.html">Our Menu</a></li>
+            <li><a href="Order now.html">Order Now</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <div class="title">WELCOME TO</div>
+        <p>Luxurious Restaurant</p>
+        <marquee direction="left">
+            <p>Located at Nchiru opposite Meru Campus main gate</p>
+        </marquee>
+
+        <div>
+            <p>Watch our restaurant video</p>
+        </div>
+
+        <section class="video-banner">
+            <video id="restaurantAd" src="/video/y2mate.com - Signin with Google to Firebase  Android Tutorial_720p.mp4" poster="img/landscapeposter.jpg"></video>
+            <div class="video-overlay">
+                <div class="play-button" onclick="toggleVideo()">▶️</div>
+            </div>
+            <div class="progress-container" onclick="seekVideo(event)">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+        </section>
+
+        <div class="nav-buttons">
+            <button onclick="window.location.href='About us.html'">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024, The Group Ten. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const video = document.getElementById("restaurantAd");
+        const progress = document.getElementById("progress");
+        const progressContainer = document.querySelector(".progress-container");
+
+        function toggleVideo() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+        video.addEventListener("timeupdate",updateProgress);
+
+        function updateProgress(){
+            const percent = (video.currentTime / video.duration) * 100;
+            progress.style.width = `${percent}%`;
+        }
+
+        functionseekVideo(event); {
+            const clickX = event.offsetX;
+            const width = progressContainer.clientWidth;
+            const duration = video.duration;
+
+            video.currentTime = (clickX / width) * duration;
+        }
+
+
+    </script>
+</body>
+</html>

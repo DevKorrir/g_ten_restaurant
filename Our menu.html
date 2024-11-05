@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lUXURIOUS RESTUARANT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/food-collage-layout-variety-dishes-260nw-2369572025.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li a:hover,
+        ul li.active a {
+            background-color: #ff7200;
+            color: #fff;
+        }
+
+        .main {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+/* Title Styling */
+.title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    color: #ff7200;
+}
+
+.title p {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 30px;
+    margin-left: 40px;
+    padding: 20px;
+    background-color: #ffecd1;
+    color: #ff7200;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 20px 0;
+    color: #fff;
+    background-color: #ff7200;
+    }
+
+    footer p {
+        margin: 10px;
+    }
+
+    .nav-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+        .nav-buttons button {
+            background-color: #ff7200;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #333;
+        }
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff7200;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+tr:nth-child(even) {
+    background-color: #ffecd1;
+}
+
+tr:hover {
+    background-color: #ff7200;
+}
+/*background-color: #ffecd1;*/
+
+
+/* Specific Row Colors for Prices */
+td {
+    font-size: 1rem;
+    color: #333;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+
+    
+}
+
+    
+    </style>    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Restaurant Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li class="active"><a href="Our menu.html">Our Menu</a></li>
+            <li><a href="Order now.html">Order Now</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+        </ul>
+            
+    </header>
+    <main>
+
+        <div>
+
+            <div class="title">
+                <h1>OPENING HOURS</h1>
+                <p>We are open from 5:00am-12:am,Monday to Sundays</p>
+            </div>
+        </div>
+        <div>
+            <h1>LUXURIOUS RESTUARANT MENU</h1>
+            <table>
+                <tr>
+                    <th>Dishes</th>
+                    <th>Description</th>
+                    <th>Price(KES)</th>
+                </tr>
+                <tr>
+                    <td>Nyama Choma</td>
+                    <td>Grilled meat,typically goat or beef,served with kachumbari(tomato and onion salad)</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>Ugali</td>
+                    <td>A staple food made from maize flour,served with various stews or vegetable</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Mukimo</td>
+    <td>Mashed potatoes mixed with green vegetables like spinach,peas and maize</td>
+    <td>200</td>
+    </tr>
+    <tr>
+        <td>Pilau</td>
+        <td>Spiced rice cooked with meat,often served with a side of kachumbari</td>
+        <td>300</td>
+    </tr>
+    <tr>
+        <td>Samaki</td>
+        <td>Fried or grilled fish</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Caesar Salad</td>
+        <td>Crisp romaine lettuce with ceasar dressing,croutons and parmesan cheese</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>Chocolate Lava cake</td>
+        <td>Warm Chocolate cake with a gooey center,served with vanilla ice cream</td>
+        <td>400</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Snacks</th>
+        <th>Description</th>
+        <th>Price(KES)</th>
+    </tr>
+    <tr>
+<td>Samosa</td>
+<td>Deep-fried pastry filled with spiced meat or vegetable</td>
+<td>50</td>
+    </tr>
+    <tr>
+    <td>Mandazi</td>
+    <td>Sweet,fried dough similar to doughnuts</td>
+    <td>20</td>
+    </tr>
+    <tr>
+        <td>Bhanjia</td>
+        <td>Sliced potatoes coated in a spiced batter and deep-fried</td>
+        <td>20-50</td>
+    </tr>
+    <tr>
+        <td>Makai</td>
+        <td>Roasted maize</td>
+        <td>50</td>
+    </tr>
+    <tr>
+      <td>Chipsi</td>
+      <td>A French fry omelette</td>
+      <td>70</td>
+    </tr>
+    <tr>
+        <td>Chapati</td>
+        <td>A soft,layered flatbread</td>
+        <td>20-50</td>
+    </tr>
+    <tr>
+        <td>Chevda</td>
+        <td>A spicy,cruncy mix of fried lentils and peanuts</td>
+        <td>70</td>
+    </tr>
+    <tr>
+        <td>Mutura</td>
+        <td>A type of sausage made from goat or cow intestines stuffed with meat</td>
+        <td>20-50</td>
+    </tr>
+</table>
+<table>
+    <tr>
+    <th>Drinks</th>
+    <th>Description</th>
+    <th>Price</th>
+    </tr>
+    <tr>
+        <td>Fresh juice</td>
+        <td>Made from fresly squzeed fruits like mango,orange or passion</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Chai</td>
+        <td>Includes,Masala chai,Green tea ,Herbal tea</td>
+        <td>70</td>
+    </tr>
+    <tr>
+        <td>Coffee</td>
+        <td>Includes ,Black cofee,cappuccino,latte and americano</td>
+        <td>50-300</td>
+    </tr>
+    <tr>
+        <td>Wine</td>
+        <td>Includes red wine and white wine</td>
+        <td>1300</td>
+    </tr>
+    <tr>
+        <td>Alcoholic beverages</td>
+        <td>varieties</td>
+        <td>70-700</td>
+    </tr>
+    <tr>
+        <td>Soda</td>
+        <td>Varios flavours</td>
+        <td>70-100</td>
+    </tr>
+    <tr>
+      <td >Smoothie</td>
+      <td>Blended drink made from fruits,yogurt and vegetables</td>
+      <td>150</td>
+    </tr>
+<tr>
+    <td>Coconut water</td>
+    <td>Refreshing drink from the clear liquid inside young coconuts</td>
+    <td>100</td>
+</tr>
+</table>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="window.location.href='About us.html'">Previous</button>
+        <button onclick="window.location.href='Order now.html'">Next</button>
+    </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024, The Group Ten. All Rights Reserved. </p>
+    </footer>
+    
+
+</body>
+</html>
