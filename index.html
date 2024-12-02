@@ -147,15 +147,16 @@
     
 
         video.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent default video click behavior
-    toggleVideo();
-});
+            event.preventDefault(); // Prevent default video click behavior
+            toggleVideo();
+        });
 
         video.addEventListener("timeupdate",updateProgress);
 
         function updateProgress(){
             const percent = (video.currentTime / video.duration) * 100;
-            progress.style.width = '${percent}%';
+            progress.style.width = `${percent}%`; // Use backticks
+
         }
 
         function seekVideo(event) {
@@ -169,7 +170,7 @@
             playButton.style.display = 'flex';
         });
 
-        
+
 
 
     </script>

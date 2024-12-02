@@ -186,6 +186,82 @@
             color: #fff;
             background-color: #ff7200;
         }
+
+        @media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    ul li a {
+        padding: 8px 10px;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .title h1 {
+        font-size: 1.8rem;
+    }
+
+    .title p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+
+    .team-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .team-member img {
+        width: 100%;
+        height: auto;
+    }
+
+    .team-info h3 {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 0;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
     </style>
 </head>
 <body>

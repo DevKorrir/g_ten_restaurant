@@ -207,6 +207,77 @@ td:first-child {
     
 }
 
+/* Responsive Design for Phone Screens */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        background-attachment: scroll; /* Prevent fixed backgrounds on smaller screens */
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 80px; /* Smaller logo for phones */
+    }
+
+    ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    ul li a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title h1 {
+        font-size: 1.8rem;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
+
+
     
     </style>    
 </head>

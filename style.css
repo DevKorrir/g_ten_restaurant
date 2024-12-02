@@ -225,6 +225,86 @@ h1 {
     }
 }
 
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        background-size: cover;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header ul li {
+        display: block;
+        width: 100%;
+    }
+
+    header ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .video-banner video {
+        height: auto; /* Maintain aspect ratio */
+        max-height: 300px; /* Adjust for smaller screens */
+    }
+
+     .progress-container {
+        height: 6px;
+    } 
+
+    .play-button {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    main .title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    main p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    marquee {
+        font-size: 0.9rem;
+    }
+
+    .nav-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+    footer p {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
 @media (max-width: 480px) {
     ul {
         margin-right: 10px;
