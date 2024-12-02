@@ -75,6 +75,11 @@
             border-radius: 4px;
             transition: width 0.1s ease;
         }
+
+        .play-button {
+            display: flex; /* Ensures the play button is visible by default */
+        }
+
     </style>
 </head>
 <body>
@@ -132,22 +137,19 @@
         function toggleVideo() {
             if (video.paused) {
                 video.play();
-                playButton.classList.add('hidden');
+                playButton.style.display = 'flex';
             } else {
                 video.pause();
-                playButton.classList.remove('hidden');
+                playButton.style.display = 'flex';
             }
         }
 
-        video.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                playButton.classList.add('hidden');
-            } else {
-                video.pause();
-                playButton.classList.remove('hidden');
-            }
-        });
+    
+
+        video.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default video click behavior
+    toggleVideo();
+});
 
         video.addEventListener("timeupdate",updateProgress);
 
@@ -162,6 +164,10 @@
             const seekTime = (clickPosition / containerWidth) * video.duration;
             video.currentTime = seekTime;
         }
+
+        video.addEventListener('ended', () => {
+            playButton.style.display = 'flex';
+        });
 
         
 
