@@ -5,36 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Luxurious Restaurant</title>
     <link rel="stylesheet" href="service.css">
-    <style>
-        .service-article {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        .service-details {
-            flex-grow: 1;
-            margin-right: 15px;
-        }
-
-        .apply-button {
-            background-color: #ff7200;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .apply-button:hover {
-            background-color: #ff5500;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -60,51 +30,58 @@
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Dine-In Services</h2>
+                    <h2>🍽️ Dine-In Services</h2>
                     <p>Enjoy full-service dining with attentive waitstaff and a comfortable atmosphere.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='dine-in-application.html'">Book a Table</button>
+                <button class="apply-button" onclick="showThankYouModal('Dine-In')">Book a Table</button>
             </article>
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Takeaway and Delivery Services</h2>
+                    <h2>🥡 Takeaway and Delivery Services</h2>
                     <p>Convenient options for enjoying our food at home, including curbside pickup and delivery.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='takeaway-application.html'">Order Takeaway</button>
+                <button class="apply-button" onclick="showThankYouModal('Takeaway')">Order Takeaway</button>
             </article>
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Catering Services</h2>
+                    <h2>🎉 Catering Services</h2>
                     <p>Event catering for weddings, corporate gatherings, and other occasions.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='catering-application.html'">Request Catering</button>
+                <button class="apply-button" onclick="showThankYouModal('Catering')">Request Catering</button>
             </article>
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Private Dining and Events</h2>
+                    <h2>🏛️ Private Dining and Events</h2>
                     <p>Private rooms and event hosting for special occasions with customizable menus.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='private-dining-application.html'">Book Private Dining</button>
+                <button class="apply-button" onclick="showThankYouModal('Private Dining')">Book Private Dining</button>
             </article>
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Bar and Beverage Services</h2>
+                    <h2>🍸 Bar and Beverage Services</h2>
                     <p>A wide selection of beverages including wines, cocktails, and non-alcoholic options.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='bar-application.html'">View Bar Menu</button>
+                <button class="apply-button" onclick="showThankYouModal('Bar Services')">View Bar Menu</button>
             </article>
 
             <article class="service-article">
                 <div class="service-details">
-                    <h2>Online Ordering and Mobile App Services</h2>
+                    <h2>📱 Online Ordering and Mobile App Services</h2>
                     <p>Order online or through our mobile app for a seamless experience.</p>
                 </div>
-                <button class="apply-button" onclick="window.location.href='online-order-application.html'">Start Ordering</button>
+                <button class="apply-button" onclick="showThankYouModal('Online Ordering')">Start Ordering</button>
             </article>
+        </section>
+
+        <!-- Consultation Section -->
+        <section class="consultation-section">
+            <h2>Need Personalized Guidance?</h2>
+            <p>Our team is ready to help you plan your perfect dining experience.</p>
+            <button class="apply-button" onclick="openConsultationForm()">Schedule Consultation</button>
         </section>
 
         <div class="nav-buttons">
@@ -113,8 +90,46 @@
         </div>
     </main>
 
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Thank You!</h2>
+            <p id="modalServiceText">Thank you for your interest in our service.</p>
+            <p>We'll contact you shortly to confirm your request.</p>
+            <button class="apply-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Luxurious Restaurant. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showThankYouModal(serviceName) {
+            const modal = document.getElementById('thankYouModal');
+            const modalText = document.getElementById('modalServiceText');
+            modalText.textContent = `Thank you for your interest in our ${serviceName} service!`;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'none';
+        }
+
+        function openConsultationForm() {
+            alert('Consultation Booking Feature Coming Soon!');
+            // In future, you can replace this with an actual consultation booking modal or page
+        }
+
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('thankYouModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>

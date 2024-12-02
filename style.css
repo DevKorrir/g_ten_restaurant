@@ -28,6 +28,7 @@ header {
     width: 100px;
     height: auto;
     margin-left: 20px;
+    border-radius: 10px;
 }
 
 ul {
