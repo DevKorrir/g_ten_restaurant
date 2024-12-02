@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -103,7 +103,7 @@ ul li.active a,
             color: #fff;
         }
 
-/* Main Content Styling */
+/* Main Content css */
 main.services {
     width: 90%;
     max-width: 1000px;
@@ -258,83 +258,3 @@ footer p {
     border-radius: 10px;
     text-align: center;
 }
-
-
-
-/*
-        
-
-        
-
-        
-
-        
-
-        /* Modal Styles 
-    
-
-        
-
-        
-
-        
-
-        
-
-        /* Additional styles for header and navigation 
-        header {
-            background-color: #f8f8f8;
-            padding: 15px 0;
-        }
-
-        .main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            max-height: 50px;
-        }
-
-        header ul {
-            display: flex;
-            list-style: none;
-        }
-
-        header ul li {
-            margin-left: 20px;
-        }
-
-        header ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-
-        header ul li.active a {
-            color: #ff7200;
-        }
-
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .nav-buttons button {
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-buttons button:hover {
-            background-color: #e0e0e0;
-        }
-    */
-
