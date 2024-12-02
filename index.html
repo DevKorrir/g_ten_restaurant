@@ -104,7 +104,7 @@
         </div>
 
         <section class="video-banner">
-            <video id="restaurantAd" src="/video/y2mate.com - Signin with Google to Firebase  Android Tutorial_720p.mp4" poster="img/landscapeposter.jpg"></video>
+            <video id="restaurantAd" src="/video/grouptenvideo_720pFHR.mp4" poster="img/landscapeposter.jpg"></video>
             <div class="video-overlay">
                 <div class="play-button" onclick="toggleVideo()">▶️</div>
             </div>
@@ -125,16 +125,30 @@
 
     <script>
         const video = document.getElementById("restaurantAd");
+        const playButton = document.querySelector('.play-button');
         const progress = document.getElementById("progress");
         const progressContainer = document.querySelector(".progress-container");
 
         function toggleVideo() {
             if (video.paused) {
                 video.play();
+                playButton.classList.add('hidden');
             } else {
                 video.pause();
+                playButton.classList.remove('hidden');
             }
         }
+
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playButton.classList.add('hidden');
+            } else {
+                video.pause();
+                playButton.classList.remove('hidden');
+            }
+        });
+
         video.addEventListener("timeupdate",updateProgress);
 
         function updateProgress(){
@@ -142,13 +156,14 @@
             progress.style.width = `${percent}%`;
         }
 
-        functionseekVideo(event); {
-            const clickX = event.offsetX;
-            const width = progressContainer.clientWidth;
-            const duration = video.duration;
-
-            video.currentTime = (clickX / width) * duration;
+        function seekVideo(event) {
+            const clickPosition = event.offsetX;
+            const containerWidth = progressContainer.offsetWidth;
+            const seekTime = (clickPosition / containerWidth) * video.duration;
+            video.currentTime = seekTime;
         }
+
+        
 
 
     </script>
