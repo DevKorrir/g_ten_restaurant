@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxurious Restaurant - Contact Us</title>
     <style>
-        /* General Reset */
+        
         * {
             margin: 0;
             padding: 0;
@@ -130,6 +130,8 @@
 
         button:hover {
             background-color: #e65c00;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
         }
 
         .nav-buttons button {
@@ -186,6 +188,60 @@
         .section{
             align-content: center;
         }
+
+        /* Styles for phones with screen width up to 600px */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        background-size: cover;
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    ul li {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    ul li a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .contact-container {
+        padding: 20px;
+        margin: 10px auto;
+        width: 95%; /* Ensure it fits within smaller screens */
+    }
+
+    form input, form textarea, button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -230,7 +286,7 @@
     <div class="contact-info">
         <p>Email: <a href="mailto:info@luxuriousrestaurant.com">info@luxuriousrestaurant.com</a></p>
         <p>Phone: <a href="tel:+254719227769">+254 719 227 769</a></p>
-        <p>Address: 510 Jomo Kenyatta, Nairobi, Kenya</p>
+        <p>Address: Kianjai Road, Meru, Kenya</p>
         <p>Follow us on
             <a href="https://twitter.com/luxuriousrestaurant">Twitter</a> |
             <a href="https://facebook.com/luxuriousrestaurant">Facebook</a> |
@@ -241,5 +297,18 @@
     <footer>
         <p>&copy; 2024 Luxurious Restaurant. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailField = document.getElementById("email").value.trim();
+    
+            if (!emailPattern.test(emailField)) {
+                event.preventDefault();
+                alert("Please enter a valid email address.");
+            }
+        });
+    </script>
+    
 </body>
 </html>

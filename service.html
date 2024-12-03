@@ -28,47 +28,108 @@
             <h1>Our Services</h1>
             <p>At Luxurious Restaurant, we offer a range of services to provide an exceptional dining experience:</p>
 
-            <article>
-                <h2>Dine-In Services</h2>
-                <p>Enjoy full-service dining with attentive waitstaff and a comfortable atmosphere.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>🍽️ Dine-In Services</h2>
+                    <p>Enjoy full-service dining with attentive waitstaff and a comfortable atmosphere.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Dine-In')">Book a Table</button>
             </article>
 
-            <article>
-                <h2>Takeaway and Delivery Services</h2>
-                <p>Convenient options for enjoying our food at home, including curbside pickup and delivery.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>🥡 Takeaway and Delivery Services</h2>
+                    <p>Convenient options for enjoying our food at home, including curbside pickup and delivery.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Takeaway')">Order Takeaway</button>
             </article>
 
-            <article>
-                <h2>Catering Services</h2>
-                <p>Event catering for weddings, corporate gatherings, and other occasions.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>🎉 Catering Services</h2>
+                    <p>Event catering for weddings, corporate gatherings, and other occasions.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Catering')">Request Catering</button>
             </article>
 
-            <article>
-                <h2>Private Dining and Events</h2>
-                <p>Private rooms and event hosting for special occasions with customizable menus.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>🏛️ Private Dining and Events</h2>
+                    <p>Private rooms and event hosting for special occasions with customizable menus.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Private Dining')">Book Private Dining</button>
             </article>
 
-            <article>
-                <h2>Bar and Beverage Services</h2>
-                <p>A wide selection of beverages including wines, cocktails, and non-alcoholic options.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>🍸 Bar and Beverage Services</h2>
+                    <p>A wide selection of beverages including wines, cocktails, and non-alcoholic options.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Bar Services')">View Bar Menu</button>
             </article>
 
-            <article>
-                <h2>Online Ordering and Mobile App Services</h2>
-                <p>Order online or through our mobile app for a seamless experience.</p>
+            <article class="service-article">
+                <div class="service-details">
+                    <h2>📱 Online Ordering and Mobile App Services</h2>
+                    <p>Order online or through our mobile app for a seamless experience.</p>
+                </div>
+                <button class="apply-button" onclick="showThankYouModal('Online Ordering')">Start Ordering</button>
             </article>
-
-            <!-- Continue listing each service in a similar format -->
         </section>
+
+        <!-- Consultation Section -->
+        <section class="consultation-section">
+            <h2>Need Personalized Guidance?</h2>
+            <p>Our team is ready to help you plan your perfect dining experience.</p>
+            <button class="apply-button" onclick="openConsultationForm()">Schedule Consultation</button>
+        </section>
+
         <div class="nav-buttons">
             <button onclick="window.location.href='Order now.html'">Previous</button>
             <button onclick="window.location.href='Contact us.html'">Next</button>
         </div>
-    
     </main>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Thank You!</h2>
+            <p id="modalServiceText">Thank you for your interest in our service.</p>
+            <p>We'll contact you shortly to confirm your request.</p>
+            <button class="apply-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Luxurious Restaurant. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showThankYouModal(serviceName) {
+            const modal = document.getElementById('thankYouModal');
+            const modalText = document.getElementById('modalServiceText');
+            modalText.textContent = `Thank you for your interest in our ${serviceName} service!`;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('thankYouModal');
+            modal.style.display = 'none';
+        }
+
+        function openConsultationForm() {
+            alert('Consultation Booking Feature Coming Soon!');
+            // In future, you can replace this with an actual consultation booking modal or page
+        }
+
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('thankYouModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
