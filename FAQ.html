@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Restaurant - FAQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li a:hover,
+        ul li.active a {
+            background-color: #ff7200;
+            color: #fff;
+        }
+
+        main {
+            max-width: 1200px;
+            background-color: #030e07a6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            text-align: center;
+            color: #fff;
+        }
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/food-collage-layout-variety-dishes-260nw-2369572025.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            flex-direction: column;
+            padding: 0px;
+        }
+
+
+        .faq-container {
+            max-width: 1000px;
+            background-color: rgba(255, 236, 209, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            color: #333;
+        }
+
+        .faq-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff7200;
+            font-size: 2.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ff7200;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .faq-icon {
+            width: 25px;
+            height: 25px;
+            position: relative;
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background-color: #ff7200;
+            transition: all 0.3s ease;
+        }
+
+        .faq-icon::before {
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .faq-icon::after {
+            width: 3px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 0 15px;
+            border-radius: 10px;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq-item.active .faq-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1px;
+            opacity: 1;
+        }
+
+        .faq-answer p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul, 
+        .faq-answer ol {
+            width: 100%; /* Full width within the answer */
+            max-width: 600px; /* Optional: limit max width for readability */
+            text-align: left; /* Align text and lists to the left */
+            display: inline-block;
+            margin-left: 40px;
+            margin-top: 10px;
+            padding-left: 10px;
+            list-style-position: outside;
+        }
+
+        .faq-answer ol {
+            list-style-type: decimal;
+        }
+
+        .faq-answer ul li, 
+        .faq-answer ol li {
+            margin-bottom: 10px;
+    
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul li::marker,
+        .faq-answer ol li::marker {
+            color: #ff7200;
+            font-weight: bold;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #ff7200;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 20px 0;
+            color: #fff;
+            background-color: #ff7200;
+        }
+
+        /* Responsive and other styles remain the same as previous artifact */
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Restaurant Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="Our menu.html">Our Menu</a></li>
+            <li><a href="Order now.html">Order Now</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+            <li class="active"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </header>
+    <main>
+
+    <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you offer vegetarian options?</h3>
+                <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! We offer a variety of vegetarian options:</p>
+                <ol>
+                    <li>Caesar Salad with vegetarian-friendly ingredients</li>
+                    <li>Mukimo (mashed potatoes with green vegetables)</li>
+                    <li>Multiple vegetable-based snacks and side dishes</li>
+                    <li>Customizable menu options to suit dietary preferences</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What are your opening hours?</h3>
+                <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+                <p>Our restaurant is open with convenient hours:</p>
+                <ol>
+                    <li>Open 7 days a week</li>
+                    <li>From 5:00 AM to 12:00 AM</li>
+                    <li>Breakfast, lunch, and dinner service available</li>
+                    <li>Late-night dining options</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you offer reservations?</h3>
+                <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+                <p>Reservation process is straightforward:</p>
+                <ol>
+                    <li>Call our reservation desk directly</li>
+                    <li>Book online through our website</li>
+                    <li>Recommended for groups of 4 or more</li>
+                    <li>Advance booking helps ensure your preferred time</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What payment methods do you accept?</h3>
+                <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+                <p>We accept multiple payment options:</p>
+                <ol>
+                    <li>Cash</li>
+                    <li>Credit cards (Visa, MasterCard)</li>
+                    <li>Mobile payment solutions</li>
+                    <li>Contactless payments</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button onclick="window.location.href='Contact us.html'">Previous</button>
+        <button onclick="window.location.href='index.html'">Go Home</button>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024, Luxurious Restaurant. All Rights Reserved.</p>
+</footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
